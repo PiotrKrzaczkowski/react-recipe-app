@@ -32,11 +32,13 @@ function App() {
           value={foodName}
           onChange={(e) => setFoodName(e.target.value)}
         />
-        <button type="submit">Search</button>
+        <button className="submit-btn" type="submit">
+          Search
+        </button>
       </form>
       <div className="recipes">
         {recipes.map((recipe) => {
-          return <Recipe key={uuidv4} recipe={recipe} />;
+          return <Recipe key={Math.random() * 9999} recipe={recipe} />;
         })}
       </div>
     </div>
