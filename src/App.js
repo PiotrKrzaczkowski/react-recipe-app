@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import Axios from "axios";
 import "./App.css";
+import Recipe from "./components/Recipe";
 
 function App() {
   const [foodName, setFoodName] = useState("");
@@ -16,6 +18,7 @@ function App() {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    getData();
   };
 
   return (
@@ -31,6 +34,11 @@ function App() {
         />
         <button type="submit">Search</button>
       </form>
+      <div className="recipes">
+        {recipes.map((recipe) => {
+          return <Recipe key={uuidv4} recipe={recipe} />;
+        })}
+      </div>
     </div>
   );
 }
