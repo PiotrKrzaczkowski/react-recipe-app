@@ -95,7 +95,7 @@ h1 {
 }
 
 .recipe {
-  width: 30rem;
+  width: 25rem;
   margin: 3rem;
   display: flex;
   flex-direction: column;
@@ -168,6 +168,12 @@ h1 {
 .ingredient-weight {
   color: #40b48e;
   font-size: 1.3rem;
+}
+
+@media (min-width: 375px) {
+  .recipe {
+    width: 280px;
+  }
 }
 
 @media (min-width: 768px) {
